@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="todo.js" defer></script>
+    <script type="module" src="../auth/auth.js" defer></script>
+</head>
+<body>
+
+<div>
+<nav class="navbar">
+    <div class="nav-container">
+        
+        
+        <div class="auth-wrapper">
+            <div id="auth-controls" class="nav-auth">
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button id="login" class="nav-btn login-btn">Log In</button>
+                <button id="register" class="nav-btn reg-btn">Sign Up</button>
+            </div>
+
+            <div id="user-profile" class="nav-profile" style="display: none;">
+                <span id="username_to_display">Welcome, User</span>
+                <button id="logout" class="nav-btn logout-btn">Log Out</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+</div>
+    <div class="container">
+        <header class="page-header">
+            <div>
+                <h1>To-do list tracker</h1>
+                <p class="subtitle">Add, edit, and page through your tasks with a clean, responsive interface.</p>
+            </div>
+        </header>
+
+        <section class="form-container">
+            <input type="text" id="todoDesc" placeholder="What needs to be done?">
+            <select id="todoType">
+            <option value="" disabled >Select Category</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Others">Others</option>
+        </select>
+            <button id="addTodo">Add Task</button>
+        </section>
+        <div id="quick-btns" class="quick-actions-bar">
+    <button id="delete-all" class="btn-destructive" title="Permanently remove all completed tasks">
+       Delete All Completed Tasks
+    </button>
+</div>
+        <div id="filter-pagination-container" class="pagination-btns"></div>
+        
+        <section id="content" class="table-card">
+            <table class="todo-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Task Description</th>
+                        <th>Task Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="todo-table-body"></tbody>
+            </table>
+        </section>
+
+        <div id="pagination-container" class="pagination-btns"></div>
+    </div>
+
+    <div id="editModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Edit Task</h3>
+            <div class="modal-form">
+                <input type="text" id="editTodoDesc" placeholder="Task Description">
+                <select id="editTodoType">
+            <option value="" disabled >Select Category</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Others">Others</option>
+        </select>
+                <div class="modal-actions">
+                    <button id="saveBtn">Save Changes</button>
+                    <button type="button" class="secondary-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

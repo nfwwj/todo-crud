@@ -1,0 +1,510 @@
+/* Global Page Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #1f2937;
+    margin: 0;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 920px;
+}
+
+.page-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.subtitle {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.form-container input,
+.form-container button {
+    min-height: 48px;
+}
+
+.form-container input {
+    flex: 1 1 220px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    color: #1f2937;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-container input:focus {
+    border-color: #4f7cd0;
+    box-shadow: 0 0 0 4px rgba(79, 124, 208, 0.15);
+}
+
+.form-container input::placeholder {
+    color: #9ca3af;
+}
+
+.form-container button {
+    flex: 0 0 auto;
+    padding: 0 22px;
+    border: none;
+    border-radius: 12px;
+    background-color: #4f7cd0;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.form-container button:hover {
+    background-color: #3d6bb9;
+}
+
+.form-container button:active {
+    transform: translateY(1px);
+}
+
+.table-card {
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+}
+
+.todo-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.todo-table thead {
+    background-color: #4f7cd0;
+}
+
+.todo-table th,
+.todo-table td {
+    padding: 16px 18px;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+tr.task-done {
+    background-color: rgba(223, 240, 216, 0.6) !important; /* Soft light green */
+    color: #3c763d; /* Subtle dark green text */
+}
+
+/* Container Layout Adjustments */
+.quick-actions-bar {
+    display: flex;
+    justify-content: flex-end; /* Align to the right side of your dashboard grid */
+    margin: 1rem 0;
+    padding: 0 4px;
+}
+
+/* Master Destructive Button Design */
+.btn-destructive {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* Spaces out your inline SVG icon from the text */
+    background-color: #fff5f5; /* Soft background tint */
+    color: #e53e3e; /* Distinct warning crimson */
+    border: 1px solid #fed7d7;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Interactive States */
+.btn-destructive:hover {
+    background-color: #e53e3e; /* Flips color profile on hover */
+    color: #ffffff;
+    border-color: #e53e3e;
+    box-shadow: 0 2px 4px rgba(229, 62, 62, 0.15);
+}
+
+.btn-destructive:active {
+    transform: scale(0.98); /* Tactile click feedback compression effect */
+    background-color: #c53030;
+    border-color: #c53030;
+}
+
+.btn-destructive:focus-visible {
+    outline: 2px solid #e53e3e;
+    outline-offset: 2px;
+}
+
+.todo-table th {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.todo-table td {
+    border-top: 1px solid #e5e7eb;
+    color: #334155;
+    font-size: 0.94rem;
+}
+
+.todo-table tbody tr:nth-child(odd) {
+    background-color: #f9fbfd;
+}
+
+.todo-table tbody tr:hover {
+    background-color: #eef4ff;
+}
+
+.todo-table td:last-child,
+.todo-table th:last-child {
+    text-align: center;
+    width: 150px;
+}
+
+.todo-table td:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    font-family: inherit;
+}
+
+.delete-btn {
+    background-color: #db3f3f;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.delete-btn:hover {
+    background-color: #b63434;
+}
+
+.delete-btn:active {
+    transform: translateY(1px);
+}
+
+.edit-btn {
+    background-color: #f2b90f;
+    color: #111827;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.edit-btn:hover {
+    background-color: #d8a20a;
+}
+
+.pagination-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.page {
+    min-width: 42px;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #334155;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.page:hover {
+    background-color: #e8f0ff;
+}
+
+.page.active {
+    background-color: #4f7cd0;
+    color: #ffffff;
+    border-color: #4f7cd0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: min(100%, 420px);
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+}
+
+.modal-content h3 {
+    margin: 0 0 18px;
+    font-size: 1.25rem;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.modal-form input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.modal-actions button {
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-actions #saveBtn {
+    background-color: #4f7cd0;
+    color: #ffffff;
+}
+
+.modal-actions #saveBtn:hover {
+    background-color: #3d6bb9;
+}
+
+.secondary-btn {
+    background-color: #e5e7eb;
+    color: #1f2937;
+}
+
+.secondary-btn:hover {
+    background-color: #d1d5db;
+}
+/* Navbar Specific Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 15px rgba(15, 23, 42, 0.08);
+    z-index: 999;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    border-radius: 0.5rem;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #4f7cd0;
+    letter-spacing: -0.5px;
+}
+
+.nav-auth, .nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Navbar Inputs */
+.nav-auth input {
+    height: 38px;
+    padding: 0 12px;
+    font-size: 0.9rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.2s;
+    width: 140px; /* Slimmer for the navbar */
+}
+
+.nav-auth input:focus {
+    border-color: #4f7cd0;
+    width: 180px; /* Expands slightly when typing */
+}
+
+/* Navbar Buttons */
+.nav-btn {
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.login-btn {
+    background-color: #4f7cd0;
+    color: white;
+}
+
+.reg-btn {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.logout-btn {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.logout-btn:hover {
+    background-color: #fecaca;
+}
+
+#username_to_display {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4b5563;
+    margin-right: 10px;
+}
+
+/* Adjust Body Padding since we added a sticky nav */
+body {
+    padding-top: 0; /* Remove top padding to let nav touch the top */
+    flex-direction: column; /* Stack nav and container */
+    align-items: center;
+}
+
+/* Mobile Responsiveness for Nav */
+@media (max-width: 850px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-auth input {
+        width: 100px;
+    }
+}
+@media (max-width: 720px) {
+    body {
+        padding: 16px;
+    }
+
+    .form-container {
+        flex-direction: column;
+    }
+
+    .todo-table th,
+    .todo-table td {
+        padding: 12px 12px;
+    }
+
+    .pagination-btns {
+        gap: 8px;
+    }
+
+    .page {
+        padding: 8px 12px;
+    }
+}
+
+.form-container input,
+.form-container select, /* Added this */
+.form-container button {
+    min-height: 48px;
+}
+
+.form-container input,
+.form-container select { /* Added this */
+    flex: 1 1 220px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    color: #1f2937;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none; /* Removes native browser styling override */
+}
+.filter {
+    color: #4b5563; /* Default gray */
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-color: #ffffff;
+}
+
+.filter.active {
+    background-color: #4f7cd0;
+    color: #ffffff;
+    font-weight: 600;
+}
+/* Ensure the focus ring applies to the select dropdown too */
+.form-container input:focus,
+.form-container select:focus {
+    border-color: #4f7cd0;
+    box-shadow: 0 0 0 4px rgba(79, 124, 208, 0.15);
+}
