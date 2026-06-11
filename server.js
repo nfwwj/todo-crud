@@ -1,4 +1,7 @@
 import 'dotenv/config'
+import dns from "dns"
+dns.setServers(['8.8.8.8', '1.1.1.1']);
+
 import express from "express"
 import connectDB from "./config/connectmongo.js"
 //  import { Todo } from "./models/todoModel.js"; // Make sure you have your model imported
